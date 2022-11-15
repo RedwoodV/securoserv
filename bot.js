@@ -11,7 +11,15 @@ const token = process.env.TOKEN;
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildMessages,
 	],
+	presence: {
+		activities: [{
+			name: 'Redwood V',
+			type: 0,
+		}],
+		status: 'dnd',
+	},
 });
 
 // Reading command files
