@@ -55,4 +55,15 @@ for (const file of eventFiles) {
 }
 
 // Log in to Discord with your client's token
-client.login(token);
+client.login(token)
+	.catch((err) => {
+		console.error('[CRASH] Something went wrong while connecting to the bot...');
+		console.error('[CRASH] Error from Discord API:' + err);
+		return process.exit();
+	});
+
+// Handle errors:
+process.on('unhandledRejection', async (err, promise) => {
+	console.error(`[ANTI-CRASH] Unhandled Rejection: ${err}`.red);
+	console.error(promise);
+});
