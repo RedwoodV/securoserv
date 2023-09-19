@@ -22,8 +22,10 @@
     "eslint": "^8.27.0"
   },
   "dependencies": {
+    "axios": "^1.5.0",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.3",
+    "one-liner-joke": "^1.2.2",
     "undici": "^5.12.0"
   }
 }
